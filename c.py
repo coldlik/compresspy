@@ -1,4 +1,5 @@
 import sys
+import os
 import subprocess
 
 def compress_video(input_file, target_size_mb):
@@ -10,8 +11,14 @@ def compress_video(input_file, target_size_mb):
     target_bitrate = (target_size_mb * 1024 * 1024) * x / duration
 
     # Compressed file name
-    output_file = input_file.replace("(cut)", "(cut) (compressed)")
-    
+    directory, file_name = os.path.split(input_file)
+    base_name, extension = os.path.splitext(file_name)
+
+    if base_name.startswith("(cut)"):
+        output_file = input_file.replace("(cut)", "(cut) (compressed)")
+    else:
+        output_file = os.path.join(directory, f"(compressed) {base_name}{extension}")
+
     # Create an empty output file
     open(output_file, 'w').close()
 
