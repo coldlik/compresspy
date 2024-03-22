@@ -1,7 +1,5 @@
 Python scripts, that I've created for my personal uses.
 
-Most of these scripts are designed to only work with @f0e's mpv-cut script. (For now)
-
 ---
 
 ### __Usage:__
