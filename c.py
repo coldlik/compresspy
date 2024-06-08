@@ -24,14 +24,18 @@ def compress_video(input_file, target_size_mb):
 
     # Compress video using ffmpeg with target bitrate
     ffmpeg_cmd = ['ffmpeg', '-i', input_file, '-b:v', str(int(target_bitrate))]
-    if options:
-        ffmpeg_cmd.extend(options)
+    if framerate:
+        ffmpeg_cmd.extend(['-filter:v', f'fps=fps={framerate}'])
+    
+    if extra_options:
+        ffmpeg_cmd.extend(extra_options)
+
     ffmpeg_cmd.append(output_file)
     subprocess.run(ffmpeg_cmd, input=b"y\n")
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: script.py" + " <input_file>" + " [extra_options]")
+        print("Usage: script.py" + " input_file" + " extra_options")
         sys.exit(1)
 
     input_file = sys.argv[1]
@@ -44,6 +48,16 @@ if __name__ == "__main__":
 
     target_size_mb = 25  # Target size of compressed video in MB
     x = 7  # If your output file's size is bigger than it's supposed to be, lower this number. 
+
+    framerate = None
+    extra_options = []
+
+    if options:
+        if options[0].isdigit():
+            framerate = int(options[0])
+            extra_options = options[1:]
+        else:
+            extra_options = options
 
     compress_video(input_file, target_size_mb)
     print("\n")
