@@ -9,7 +9,7 @@ Output file will have `(compressed)` prefix and it will be automatically copied 
 
 ---
 
-- c.py > automatically compresses video using ffmpeg to ~25MB for uploading to discord etc.\
+- c.py > automatically compresses video using ffmpeg to ~25MB for uploading to discord and etc.\
 ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎‎ ‎changeable framerate: e.g `'c.py "video" 30` -> 30 fps output video.\
 ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎extra ffmpeg functions: [documentation](https://ffmpeg.org/ffmpeg.html) (e.g `c.py "video" 30 -an` to remove audio from output video.)
 
