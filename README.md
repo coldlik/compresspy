@@ -15,8 +15,8 @@ Output file will have `(compressed)` prefix and it will be automatically copied 
 
 
 - cb.py > same as c.py, but it blurs the video with tekno's blur before compressing it.\
-‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ___doesn't include changeable framerate and extra ffmpeg functions.___\
-‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎install [tekno's blur](https://github.com/f0e/blur/releases) dev release for now.
+‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ___doesn't include changeable framerate and extra ffmpeg functions since they're customizable in .blur-config.cfg___\
+‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎install [tekno's blur](https://github.com/f0e/blur/releases/tag/v1.8).
 
 __experimental__
 - test.py > c.py + cb.py combined, has a CLI menu and a function that merges multiple video files.\
